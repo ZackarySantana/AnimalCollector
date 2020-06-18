@@ -1,5 +1,4 @@
 # Animal Collector
-<<<<<<< HEAD
 This is a simple react based cookie clicker game. The objective is collect money and buy items which increase your production
 
 ## Motivation
