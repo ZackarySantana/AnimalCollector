@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './index.scss';
-import { Provider } from 'react-redux';
 
-import store from './redux/store';
+import { Provider } from 'react-redux';
+import { initStore, saveToLocalStorage } from './redux/store';
+
 import Game from './components/game';
 
 export default class AnimalCollector extends Component {
-
-	static propTypes = {
-		store: PropTypes.object
-	}
 
 	constructor(props) {
 		super(props);

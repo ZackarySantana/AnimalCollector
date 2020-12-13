@@ -1,28 +1,28 @@
-import { createStore } from 'redux';
+import { reset } from './actions';
 import rootReducer from './rootreducer';
 
-const store = createStore(rootReducer, loadFromLocalState());
+export function initStore(store) {
+	store.replaceReducer(rootReducer);
+	store.dispatch(reset(loadFromLocalState()));
+}
+
+
+export function saveToLocalStorage(state) {
+	try {
+		const serializedState = JSON.stringify(state.stats);
+		localStorage.setItem('animalcollector-data', serializedState);
+	} catch (exception) {
+		console.log(exception);
+	}
+}
 
 function loadFromLocalState() {
 	try {
-		const serializedState = localStorage.getItem('animalcollecter-state');
+		const serializedState = localStorage.getItem('animalcollector-data');
 		if (serializedState === null) return undefined;
-		return JSON.parse(serializedState);
+		return { stats: JSON.parse(serializedState) };
 	} catch (exception) {
 		console.log(exception);
 		return undefined;
 	}
 }
-
-function saveToLocalStorage(state) {
-	try {
-		const serializedState = JSON.stringify(state);
-		localStorage.setItem('animalcollecter-state', serializedState);
-	} catch (exception) {
-		console.log(exception);
-	}
-}
-
-store.subscribe(() => saveToLocalStorage(store.getState()));
-
-export default store;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Icon from 'games/play/clickicon.svg';
+import Icon from '../../images/clickicon.svg';
 
 import { click } from '../../redux/actions';
 

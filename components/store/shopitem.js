@@ -43,7 +43,7 @@ function PShopItem(props) {
 			<div className="shop-item-icon">
 				<p>{props.name}</p>
 				{props.access &&
-					<img src={require("games/play/" + props.access + ".svg")} alt="rat" />
+					<img src={require("../../images/" + props.access + ".svg")} alt="rat" />
 				}
 			</div>
 			<div className="shop-item-info">
