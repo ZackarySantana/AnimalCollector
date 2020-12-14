@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import './index.scss';
+import React, { Component } from "react";
+import "./index.scss";
 
-import { Provider } from 'react-redux';
-import { initStore, saveToLocalStorage } from './redux/store';
+import { Provider } from "react-redux";
+import { initStore, saveToLocalStorage } from "./redux/store";
 
-import Game from './components/game';
+import Game from "./components/game";
 
 export default class AnimalCollector extends Component {
-
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			...props
-		}
+			...props,
+		};
 
 		initStore(this.state.store);
 	}
 
 	componentDidMount() {
 		this.unsubscribe = this.state.store.subscribe(() =>
-			saveToLocalStorage(this.state.store.getState()));
+			saveToLocalStorage(this.state.store.getState())
+		);
 	}
 
 	componentWillUnmount() {

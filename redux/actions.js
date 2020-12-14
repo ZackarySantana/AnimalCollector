@@ -14,8 +14,8 @@ export const UPDATE_PROGRESS = "UPDATE_PROGRESS";
 export function click() {
 	return {
 		type: TYPE_COLLECTOR,
-		intent: CLICK
-	}
+		intent: CLICK,
+	};
 }
 
 export function addMoney(amount) {
@@ -23,9 +23,9 @@ export function addMoney(amount) {
 		type: TYPE_MONEY_DATA,
 		intent: ADD_MONEY,
 		payload: {
-			amount
-		}
-	}
+			amount,
+		},
+	};
 }
 
 export function incrementDisplayMoney(amount) {
@@ -33,9 +33,9 @@ export function incrementDisplayMoney(amount) {
 		type: TYPE_MONEY_DATA,
 		intent: INCREMENT_DISPLAY_MONEY,
 		payload: {
-			amount
-		}
-	}
+			amount,
+		},
+	};
 }
 
 export function storeItemPayment(name, amount) {
@@ -44,9 +44,9 @@ export function storeItemPayment(name, amount) {
 		intent: STORE_ITEM_PAYMENT,
 		payload: {
 			name,
-			amount
-		}
-	}
+			amount,
+		},
+	};
 }
 
 export function buyItem(name) {
@@ -54,9 +54,9 @@ export function buyItem(name) {
 		type: TYPE_STORE,
 		intent: BUY_ITEM,
 		payload: {
-			name
-		}
-	}
+			name,
+		},
+	};
 }
 
 export function cantBuyItem(name) {
@@ -64,9 +64,9 @@ export function cantBuyItem(name) {
 		type: TYPE_STORE,
 		intent: CANT_BUY_ITEM,
 		payload: {
-			name
-		}
-	}
+			name,
+		},
+	};
 }
 
 export function updateProgress(name, newProgress) {
@@ -75,12 +75,10 @@ export function updateProgress(name, newProgress) {
 		intent: UPDATE_PROGRESS,
 		payload: {
 			name,
-			newProgress
-		}
-	}
+			newProgress,
+		},
+	};
 }
-
-
 
 export const RESET = "RESET";
 
@@ -88,7 +86,7 @@ export function reset(loadedState) {
 	return {
 		type: RESET,
 		payload: {
-			loadedState
-		}
-	}
+			loadedState,
+		},
+	};
 }

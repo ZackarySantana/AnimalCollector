@@ -1,13 +1,12 @@
-import React, { Fragment } from 'react';
-import { connect } from 'react-redux';
+import React, { Fragment } from "react";
+import { connect } from "react-redux";
 
-import SideBar from './sidebar';
-import Collector from './collector';
-import Store from './store';
-import { incrementDisplayMoney } from '../redux/actions';
+import SideBar from "./sidebar";
+import Collector from "./collector";
+import Store from "./store";
+import { incrementDisplayMoney } from "../redux/actions";
 
 class PGame extends React.Component {
-
 	componentDidMount() {
 		this.interval = setInterval(() => this.updateMoney(), 100);
 	}
@@ -19,7 +18,11 @@ class PGame extends React.Component {
 	updateMoney() {
 		if (this.props.displayMoney < this.props.money) {
 			let randomPercentOfTotal = Math.floor(Math.random() * 3 + 2);
-			let min = parseInt((this.props.money - this.props.displayMoney) / randomPercentOfTotal, 10);
+			let min = parseInt(
+				(this.props.money - this.props.displayMoney) /
+					randomPercentOfTotal,
+				10
+			);
 			this.props.incrementDisplayMoney(min > 1 ? min : 1);
 		}
 	}
@@ -30,25 +33,22 @@ class PGame extends React.Component {
 				<SideBar />
 				<Collector />
 				<Store />
-			</Fragment >
+			</Fragment>
 		);
 	}
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
 	money: state.money,
-	displayMoney: state.animation.displayMoney
+	displayMoney: state.animation.displayMoney,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
 	incrementDisplayMoney: (amountToIncrease) => {
 		dispatch(incrementDisplayMoney(amountToIncrease));
-	}
+	},
 });
 
-const Game = connect(
-	mapStateToProps,
-	mapDispatchToProps,
-)(PGame);
+const Game = connect(mapStateToProps, mapDispatchToProps)(PGame);
 
 export default Game;

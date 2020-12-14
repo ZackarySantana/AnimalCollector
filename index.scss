@@ -1,13 +1,13 @@
-$primary: #B0DDC2;
-$parent-background: #66C3D1;
+$primary: #b0ddc2;
+$parent-background: #66c3d1;
 
-$background: #0F2417;
+$background: #0f2417;
 $background-lighter: #163522;
 
-$border: #EBF4FA;
+$border: #ebf4fa;
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
 }
 
@@ -59,7 +59,7 @@ code {
 			width: 10vw;
 			height: 10vw;
 			padding: 0;
-			transition: all .2s;
+			transition: all 0.2s;
 
 			&:hover {
 				transform: scale(1.05);
@@ -80,7 +80,6 @@ code {
 		color: $background;
 
 		#store-wrapper {
-
 			display: flex;
 			flex-flow: column nowrap;
 			align-items: center;
@@ -95,7 +94,10 @@ code {
 
 				width: fit-content;
 
-				background: linear-gradient($background 70%, $background-lighter);
+				background: linear-gradient(
+					$background 70%,
+					$background-lighter
+				);
 
 				border: solid $border;
 				border-width: 3px 3px 0 3px;
@@ -109,19 +111,19 @@ code {
 			}
 
 			#store-items-wrapper {
-
 				background-color: $background;
 
 				border: solid $border;
 				border-radius: 20px 20px 20px 20px;
 
 				#store-tabs {
-					#upgrades {}
+					#upgrades {
+					}
 				}
 
 				#store-items {
-
-					#low-level {}
+					#low-level {
+					}
 
 					#high-level {
 						display: none;
@@ -172,7 +174,6 @@ code {
 							border-bottom: 1px solid white;
 						}
 
-
 						&::-webkit-scrollbar {
 							width: 30px;
 							height: 30px;
@@ -181,7 +182,9 @@ code {
 						&::-webkit-scrollbar-thumb {
 							background: $background-lighter;
 							border-radius: 30px;
-							box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+							box-shadow: inset 2px 2px 2px
+									hsla(0, 0%, 100%, 0.25),
+								inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 						}
 
 						&::-webkit-scrollbar-track {
@@ -193,8 +196,6 @@ code {
 			}
 		}
 	}
-
-
 
 	.tab-list {
 		display: flex;
@@ -223,7 +224,7 @@ code {
 		}
 
 		button.disabled {
-			filter: grayscale(.7);
+			filter: grayscale(0.7);
 			pointer-events: none;
 			user-select: none;
 		}
@@ -250,7 +251,6 @@ code {
 		-webkit-user-select: none;
 		-ms-user-select: none;
 	}
-
 
 	progress {
 		width: 100%;
